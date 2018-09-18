@@ -1,0 +1,58 @@
+body{
+	background-color: black;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+
+.topNavBar{
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.clearfIx:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.logo{
+	font-size: 22px;
+	padding-top: 5px;
+}
+
+.topNavBar>.logo>.rs{
+	color: #e6686a;
+	padding-right: 4px;
+}
+.topNavBar>.logo>.card{
+	color: #9a9da2;
+}
+
+.topNavBar>nav>ul>li{
+	float: left;
+	list-style: none;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.topNavBar>nav>ul>li>a{
+	color: #b7b7b7;
+	font-size: 10px;
+	font-weight: bold;
+	border-bottom: 3px solid transparent;
+	display: block;
+	padding-bottom: 5px;
+}
+
+.topNavBar>nav>ul>li>a:hover{
+	border-bottom: 3px solid #e06567;
+}
+
+.topNavBar>a{
+	float: left;
+}
+.topNavBar>nav{
+	float: right;
+}
