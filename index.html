@@ -1,24 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>滑振的博客</title>
-	<link rel="stylesheet" href="work.css">
+    <title>方方的个人简历</title>
+    <link rel="stylesheet" href="./b.css">
+    <script src="http://at.alicdn.com/t/font_844988_mpl7l5zf8q.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
-	<div class="topNavBar clearfix">
-		<a href="#" class="logo"><span class="rs">RS</span><span class="card">card</span></a>
-		<nav>
-			<ul class="clearfix">
-				<li><a href="#">关于</a></li>
-				<li><a href="#">技能</a></li>
-				<li><a href="#">作品</a></li>
-				<li><a href="#">博客</a></li>
-				<li><a href="#">日历</a></li>
-				<li><a href="#">联系方式</a></li>
-				<li><a href="#">其他</a></li>
-			</ul>
-		</nav>
-	</div>
-	</body>
+    <div class="topNavBar clearfix">
+        <div class="topNavBar-inner clearfix">
+            <a href="#" class="logo" alt="logo">
+                <span class="rs">RS</span><span class="card">card</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">关于</a></li>
+                    <li><a href="#">技能</a></li>
+                    <li><a href="#">作品</a></li>
+                    <li><a href="#">博客</a></li>
+                    <li><a href="#">日历</a></li>
+                    <li><a href="#">联系</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
+    <main class="cardMain">
+        <div class="userCard">
+            <div class="pictureAndText clearfix">
+                <div class="picture">
+                    <img src="./img/avatar.jpg" alt="头像">
+                </div>
+                <div class="text">
+
+                    <span class="welcome">Hello
+                    <span class="triangle"></span>
+                    </span>
+                    <h1>方应杭</h1>
+                    <p>前端开发工程师</p>
+                    <hr>
+                    <dl class="clearfix">
+                        <dt>年龄</dt>
+                        <dd>18</dd>
+                        <dt>所在城市</dt>
+                        <dd>北京</dd>
+                        <dt>邮箱</dt>
+                        <dd>fangyinghang@foxmail.com</dd>
+                        <dt>手机</dt>
+                        <dd>13812345678</dd>
+                    </dl>
+                </div>
+            </div>
+            <footer class="media">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weixin"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-3zhihuicon3"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+            </footer>
+        </div>
+        <p class="downloadWrapper">
+            <a class="downloadResume" href="./resume.pdf" target="_blank" download>下载 PDF 简历</a>
+        </p>
+        <p class="selfIntroduction">
+            方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br> 技能：前端开发，Rails 开发，Node.js 开发
+        </p>
+
+    </main>
+    <section class="skills">
+        <h2>技能</h2>
+        <ol class="clearfix">
+            <li>
+                <h3>HTML 5 &amp; CSS 3</h3>
+                <div class="progressBar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h3>JavaScript</h3>
+                <div class="progressBar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h3>vue</h3>
+                <div class="progressBar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h3>jQuery</h3>
+                <div class="progressBar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h3>http</h3>
+                <div class="progressBar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h3>React</h3>
+                <div class="progressBar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+
+        </ol>
+    </section>
+    <section class="portfolio">
+        <h2>作品集</h2>
+        <nav>
+            <ol class="clearfix">
+                <li id="portfolio1">所有</li>
+                <li id="portfolio2">框架</li>
+                <li id="portfolio3">原生JS</li>
+            </ol>
+            <div id="portfolioBar" class="bar state-1">
+                <div class="bar-inner"></div>
+            </div>
+        </nav>
+        <script>
+            portfolio1.onclick = function() {
+                portfolioBar.className = 'bar state-1 '
+            }
+            portfolio2.onclick = function() {
+                portfolioBar.className = 'bar state-2 '
+            }
+            portfolio3.onclick = function() {
+                portfolioBar.className = 'bar state-3 '
+            }
+        </script>
+        <div class="works">
+            <div class="big">
+                <img src="./img/1.jpg" style="width: 606px; height: 578px;" alt="作品１">
+            </div>
+            <div class="small" style="top: 0;left: 645px;">
+                <img src="./img/1.jpg" style="width: 300px; height: 280px;" alt="作品２">
+            </div>
+            <div class="small" style="top: 298px;left: 645px;">
+                <img src="./img/1.jpg" style="width: 300px; height: 280px;" alt="作品３">
+            </div>
+        </div>
+    </section>
+</body>
+
 </html>
