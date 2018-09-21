@@ -1,0 +1,200 @@
+ul {
+    list-style: none;
+}
+
+h2,
+p,
+article {
+    margin: 0;
+    padding: 0;
+}
+
+.abstract>a {
+    text-decoration: none;
+    color: white;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.mainWrap {
+    width: 825px;
+    box-shadow: 0px 3px 19px 1px rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+}
+
+.abstract {
+    box-shadow: 0px 0px 3px 1px rgba(66, 65, 66, 0.63);
+    float: left;
+    width: 270px;
+    background: #254665;
+    color: white;
+}
+
+main {
+    float: left;
+    width: 550px;
+}
+
+.picture {
+    border: 1px solid black;
+    height: 160px;
+    width: 130px;
+    margin: 60px auto;
+    position: relative;
+    background: #fff;
+}
+
+.picture img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pictureAndText ul li {
+    font-size: 15px;
+    padding: 8px;
+}
+
+.pictureAndText ul li {
+    font-size: 15px;
+    padding: 8px;
+}
+
+.pictureAndText ul li svg {
+    height: 20px;
+    width: 20px;
+    fill: white;
+    vertical-align: text-top;
+}
+
+.pictureAndText ul li span {
+    padding-left: 8px;
+    color: #fff;
+}
+
+.abstract .hobby,
+.abstract .skills {
+    padding-left: 40px;
+}
+
+.abstract .hobby a,
+.abstract .skills a {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    background-color: #fff;
+}
+
+.abstract .hobby a svg,
+.abstract .skills a svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: baseline;
+    fill: #254665;
+}
+
+.abstract .skills ul {
+    padding-left: 10px;
+}
+
+.abstract .skills ul li {
+    padding-bottom: 5px;
+}
+
+.abstract .skills ul .skillsDetall {
+    width: 150px;
+    height: 10px;
+    background: white;
+    margin-bottom: 15px;
+}
+
+.abstract .skills ul .skillsDetall .skillsDetallInner {
+    background-color: #4487c6;
+    width: 130px;
+    height: 10px;
+}
+
+.abstract .hobby .hobbyWrap {
+    margin-top: 20px;
+}
+
+.abstract .hobby .hobbyWrap a {
+    box-sizing: border-box;
+    background: #254665;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    box-shadow: 0px 0px 11px 0.4px rgba(255, 255, 255, 0.72);
+    border-radius: 5px;
+    margin-right: 40px;
+    margin-bottom: 35px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.abstract .hobby .hobbyWrap a svg {
+    width: 40px;
+    height: 40px;
+    vertical-align: sub;
+    fill: white;
+}
+
+
+/* 右侧主体 */
+
+main {
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+
+main>article>a {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    float: left;
+    border-radius: 50%;
+    background: #254665;
+    text-align: center;
+    padding-top: 5px;
+}
+
+main>article>a .icon {
+    width: 15px;
+    height: 15px;
+    vertical-align: baseline;
+    fill: white;
+}
+
+main h2 {
+    float: left;
+    border-bottom: 1px solid #254665;
+    height: 30px;
+    width: 450px;
+    margin-right: 20px;
+    margin-left: 10px;
+    padding-bottom: 3px;
+    color: #254665;
+}
+
+main article .message {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+main article .message a span {
+    padding-left: 8px;
+    padding-right: 30px;
+}
+
+main article .message span {
+    padding-right: 50px;
+}
