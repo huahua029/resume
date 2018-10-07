@@ -3,20 +3,69 @@
 
 <head>
     <title>方方的个人简历</title>
-    <link rel="stylesheet" href="./b.css">
+    <link rel="stylesheet" href="./main.css">
     <script src="http://at.alicdn.com/t/font_844988_mpl7l5zf8q.js"></script>
     <style type="text/css">
-        .icon {
-            width: 1em;
-            height: 1em;
-            vertical-align: -0.15em;
-            fill: currentColor;
-            overflow: hidden;
-        }
-    </style>
+    .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+    }
+    .site-welcome{
+        display: none;
+        position: fixed;
+        width: 100%;height: 100%;
+        background: #888;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    .site-welcome.active{
+        display: flex;
+    }
+    .loading{
+      height: 200px;
+      width: 200px;
+      position: relative;
+  }
+  .loading::before,.loading::after{
+      content:'';
+      background: #000;
+      border-radius:50%;
+      position:absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      animation-name:s;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+  }
+  .loading::after{
+      animation-delay:1.5s;
+  }
+  @keyframes s{
+      from{
+        width:0;
+        height:0;
+        opacity: 1;
+    }
+    to{
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+</style>
 </head>
 
 <body>
+    <div id=siteWelcome class="site-welcome active">
+        <div class="loading"></div> 
+    </div>
     <div class="topNavBar clearfix">
         <div class="topNavBar-inner clearfix">
             <a href="#" class="logo" alt="logo">
@@ -47,7 +96,7 @@
                 <div class="text">
 
                     <span class="welcome">Hello
-                    <span class="triangle"></span>
+                        <span class="triangle"></span>
                     </span>
                     <h1>方应杭</h1>
                     <p>前端开发工程师</p>
@@ -172,6 +221,9 @@
             </div>
         </div>
     </section>
+    <script>
+        siteWelcome.classList.remove('active');
+    </script>
 </body>
 
 </html>
