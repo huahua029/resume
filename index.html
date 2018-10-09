@@ -101,7 +101,7 @@
         <div class="mask"></div>
     </div>
     <main class="cardMain">
-        <div class="userCard" id="siteAbout">
+        <div data-x class="userCard" id="siteAbout">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./img/avatar.jpg" alt="头像">
@@ -157,7 +157,7 @@
         </p>
 
     </main>
-    <section id="siteSkills" class="skills">
+    <section  data-x id="siteSkills" class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -199,7 +199,7 @@
 
         </ol>
     </section>
-    <section id="siteWorks" class="portfolio">
+    <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -234,17 +234,49 @@
             </div>
         </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <script>
         setTimeout(function(){
             siteWelcome.classList.remove('active');
-        },800)
-        window.onscroll = function(){
+        },500)
+        //添加offset类
+        let specialTags = document.querySelectorAll('[data-x]')
+        for(let i=0;i<specialTags.length;i++){
+            specialTags[i].classList.add('offset')
+        }
+        setTimeout(function(){
+            findClosest()
+        },500)
+        window.onscroll = function(e){
             if(window.scrollY > 0){
                 topNavBar.classList.add('sticky')
             }else{
                 topNavBar.classList.remove('sticky')
             }
+            findClosest()
         }
+
+        function findClosest(){
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0;
+            for(let i=0;i<specialTags.length;i++){
+                if(Math.abs(specialTags[i].offsetTop - window.scrollY )< Math.abs(specialTags[minIndex].offsetTop-window.scrollY)){
+                    minIndex = i;
+                }
+            }
+            //minIndex就是距离窗口顶部最近的元素
+            specialTags[minIndex].classList.remove('offset')
+            
+            let id = specialTags[minIndex].id
+            let a = document.querySelector('a[href="#'+id+'"]')
+            let li = a.parentNode
+            let borthers = li.parentNode.children
+            for(let i=0;i<borthers.length;i++){
+                borthers[i].classList.remove('highlight')
+            }
+            li.classList.add('highlight')
+        }
+
         let liTags = document.querySelectorAll('nav.menu>ul>li')
         for(let i=0;i<liTags.length;i++){
             liTags[i].onmouseenter = function(e){
@@ -255,6 +287,11 @@
             }
         }
 
+        function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+        }
+        requestAnimationFrame(animate);
         let aTags = document.querySelectorAll('nav.menu >ul>li>a')
         for(let i=0;i<aTags.length;i++){
             aTags[i].onclick = function(e){
@@ -264,21 +301,18 @@
                 let element = document.querySelector(href)
                 let top = element.offsetTop
 
-                let n = 20 //动多少次
-                let t = 500/n //多长时间动一次
+                
                 let currentTop = window.scrollY
                 let targetTop = top - 100
-                let distance = (targetTop - currentTop)/n
-                console.log(currentTop,targetTop,distance)
-                let j = 0;
-                let id = setInterval( ()=> {
-                    if(j === n){
-                        window.clearInterval(id)
-                        return
-                    }
-                    j = j+1
-                    window.scrollTo(0,currentTop + distance*j)
-                },t)
+                
+                var coords = { y: currentTop};
+                var tween = new TWEEN.Tween(coords) 
+                .to({ y: targetTop}, 500) 
+                .easing(TWEEN.Easing.Quadratic.Out) 
+                .onUpdate(function() { 
+                    window.scrollTo(0,coords.y)
+                })
+                .start(); 
             }
         }
     </script>
