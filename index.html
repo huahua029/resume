@@ -2,68 +2,78 @@
 <html>
 
 <head>
-    <title>方方的个人简历</title>
+    <title>滑振的个人简历</title>
     <link rel="stylesheet" href="./main.css">
     <script src="http://at.alicdn.com/t/font_844988_mpl7l5zf8q.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
     <style type="text/css">
-    .icon {
-        width: 1em;
-        height: 1em;
-        vertical-align: -0.15em;
-        fill: currentColor;
-        overflow: hidden;
-    }
-    .site-welcome{
-        display: none;
-        position: fixed;
-        width: 0;height: 0;
-        width: 100%;height: 100%;
-        background: #888;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-    }
-    .site-welcome.active{
-        display: flex;
-    }
-    .loading{
-      height: 200px;
-      width: 200px;
-      position: relative;
-  }
-  .loading::before,.loading::after{
-      content:'';
-      border-radius:50%;
-      position:absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      animation: 0.8s linear infinite s;
-  }
-  .loading::after{
-      animation-delay:0.4s;
-  }
-  @keyframes s{
-      from{
-        width:0;
-        height:0;
-        background: #000;
-        opacity: 1;
-    }
-    to{
-        width: 100px;
-        height: 100px;
-        opacity: 0;
-    }
-}
-</style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        
+        .site-welcome {
+            display: none;
+            position: fixed;
+            width: 0;
+            height: 0;
+            width: 100%;
+            height: 100%;
+            background: #888;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+        
+        .site-welcome.active {
+            display: flex;
+        }
+        
+        .loading {
+            height: 200px;
+            width: 200px;
+            position: relative;
+        }
+        
+        .loading::before,
+        .loading::after {
+            content: '';
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            animation: 0.8s linear infinite s;
+        }
+        
+        .loading::after {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes s {
+            from {
+                width: 0;
+                height: 0;
+                background: #000;
+                opacity: 1;
+            }
+            to {
+                width: 100px;
+                height: 100px;
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div id='siteWelcome' class="site-welcome active">
-        <div class="loading"></div> 
+        <div class="loading"></div>
     </div>
     <div id='topNavBar' class="topNavBar">
         <div class="topNavBar-inner clearfix">
@@ -157,7 +167,7 @@
         </p>
 
     </main>
-    <section  data-x id="siteSkills" class="skills">
+    <section data-x id="siteSkills" class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -201,88 +211,94 @@
     </section>
     <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
-        <nav>
-            <ol class="clearfix">
-                <li id="portfolio1">所有</li>
-                <li id="portfolio2">框架</li>
-                <li id="portfolio3">原生JS</li>
-            </ol>
-            <div id="portfolioBar" class="bar state-1">
-                <div class="bar-inner"></div>
+        <!-- 添加轮播 -->
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <img src="./img/works/nav-page.jpg" class="swiper-slide">
+                <img src="./img/works/canvas.jpg" class="swiper-slide">
+                <img src="./img/works/slideshow.jpg" class="swiper-slide">
             </div>
-        </nav>
-        <script>
-            portfolio1.onclick = function() {
-                portfolioBar.className = 'bar state-1 '
-            }
-            portfolio2.onclick = function() {
-                portfolioBar.className = 'bar state-2 '
-            }
-            portfolio3.onclick = function() {
-                portfolioBar.className = 'bar state-3 '
-            }
-        </script>
-        <div class="works">
-            <div class="big">
-                <img src="./img/1.jpg" style="width: 606px; height: 578px;" alt="作品１">
-            </div>
-            <div class="small" style="top: 0;left: 645px;">
-                <img src="./img/1.jpg" style="width: 300px; height: 280px;" alt="作品２">
-            </div>
-            <div class="small" style="top: 298px;left: 645px;">
-                <img src="./img/1.jpg" style="width: 300px; height: 280px;" alt="作品３">
-            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+
     <script>
-        setTimeout(function(){
-            siteWelcome.classList.remove('active');
-        },500)
-        //添加offset类
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        })
+    </script>
+    <script>
+        setTimeout(function() {
+                siteWelcome.classList.remove('active');
+            }, 500)
+            //添加offset类
         let specialTags = document.querySelectorAll('[data-x]')
-        for(let i=0;i<specialTags.length;i++){
+        for (let i = 0; i < specialTags.length; i++) {
             specialTags[i].classList.add('offset')
         }
-        setTimeout(function(){
+        setTimeout(function() {
             findClosest()
-        },500)
-        window.onscroll = function(e){
-            if(window.scrollY > 0){
+        }, 500)
+        window.onscroll = function(e) {
+            if (window.scrollY > 0) {
                 topNavBar.classList.add('sticky')
-            }else{
+            } else {
                 topNavBar.classList.remove('sticky')
             }
             findClosest()
         }
 
-        function findClosest(){
+        function findClosest() {
             let specialTags = document.querySelectorAll('[data-x]')
             let minIndex = 0;
-            for(let i=0;i<specialTags.length;i++){
-                if(Math.abs(specialTags[i].offsetTop - window.scrollY )< Math.abs(specialTags[minIndex].offsetTop-window.scrollY)){
+            for (let i = 0; i < specialTags.length; i++) {
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
                     minIndex = i;
                 }
             }
             //minIndex就是距离窗口顶部最近的元素
             specialTags[minIndex].classList.remove('offset')
-            
+
             let id = specialTags[minIndex].id
-            let a = document.querySelector('a[href="#'+id+'"]')
+            let a = document.querySelector('a[href="#' + id + '"]')
             let li = a.parentNode
             let borthers = li.parentNode.children
-            for(let i=0;i<borthers.length;i++){
+            for (let i = 0; i < borthers.length; i++) {
                 borthers[i].classList.remove('highlight')
             }
             li.classList.add('highlight')
         }
 
         let liTags = document.querySelectorAll('nav.menu>ul>li')
-        for(let i=0;i<liTags.length;i++){
-            liTags[i].onmouseenter = function(e){
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseenter = function(e) {
                 e.currentTarget.classList.add('active')
             }
-            liTags[i].onmouseleave = function(e){
+            liTags[i].onmouseleave = function(e) {
                 e.currentTarget.classList.remove('active')
             }
         }
@@ -293,29 +309,33 @@
         }
         requestAnimationFrame(animate);
         let aTags = document.querySelectorAll('nav.menu >ul>li>a')
-        for(let i=0;i<aTags.length;i++){
-            aTags[i].onclick = function(e){
+        for (let i = 0; i < aTags.length; i++) {
+            aTags[i].onclick = function(e) {
                 e.preventDefault()
                 let a = e.currentTarget
                 let href = a.getAttribute('href')
                 let element = document.querySelector(href)
                 let top = element.offsetTop
 
-                
+
                 let currentTop = window.scrollY
                 let targetTop = top - 100
-                
-                var coords = { y: currentTop};
-                var tween = new TWEEN.Tween(coords) 
-                .to({ y: targetTop}, 500) 
-                .easing(TWEEN.Easing.Quadratic.Out) 
-                .onUpdate(function() { 
-                    window.scrollTo(0,coords.y)
-                })
-                .start(); 
+
+                var coords = {
+                    y: currentTop
+                };
+                var tween = new TWEEN.Tween(coords)
+                    .to({
+                        y: targetTop
+                    }, 500)
+                    .easing(TWEEN.Easing.Quadratic.Out)
+                    .onUpdate(function() {
+                        window.scrollTo(0, coords.y)
+                    })
+                    .start();
             }
         }
     </script>
 </body>
 
-</html>
+</html>　

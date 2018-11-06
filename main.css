@@ -40,10 +40,12 @@
         display: block;
         clear: both;
     }
-    [data-x].offset{
+    
+    [data-x].offset {
         transform: translateY(100px);
     }
-    [data-x]{
+    
+    [data-x] {
         transform: translateY(0);
         transition: all 0.5s;
     }
@@ -55,13 +57,15 @@
         transition: all 0.5s;
         color: #b7b7b7;
     }
-    .topNavBar.sticky{
+    
+    .topNavBar.sticky {
         background: white;
         padding: 10px 0;
         z-index: 1;
-        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.4);
-        color:#3d4451;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.4);
+        color: #3d4451;
     }
+    
     .topNavBar-inner {
         padding: 0 16px;
     }
@@ -100,11 +104,10 @@
     .logo {
         float: left;
     }
-    
     /*注意滑动效果的实现*/
+    
     .topNavBar nav ul li.active>a::after,
-    .topNavBar nav ul li.highlight>a::after
-     {
+    .topNavBar nav ul li.highlight>a::after {
         content: '';
         display: block;
         position: absolute;
@@ -114,38 +117,40 @@
         background: #e06567;
         animation: menuSlide 0.3s forwards;
     }
-
-    @keyframes menuSlide{
-        from{
+    
+    @keyframes menuSlide {
+        from {
             width: 0;
         }
-        to{
+        to {
             width: 100%;
         }
     }
-    .topNavBar .submenu{
+    
+    .topNavBar .submenu {
         display: none;
         position: absolute;
         right: 0;
-        white-space: nowrap; 
+        white-space: nowrap;
         background: white;
         color: #3D4451;
-        box-shadow: 0 0 5px rgba(0,0,0,0.4)
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4)
     }
-    .topNavBar li.active>.submenu{
+    
+    .topNavBar li.active>.submenu {
         display: block;
         animation: 0.5s submenuSilde;
     }
-    @keyframes submenuSilde{
-        0%{
+    
+    @keyframes submenuSilde {
+        0% {
             transform: translateX(-50%);
         }
-        100%{
+        100% {
             transform: translateX(0);
         }
     }
-
-
+    
     .topNavBar .logo {
         font-size: 24px;
         font-family: Arial, Helvetica, sans-serif;
@@ -355,7 +360,8 @@
         transform: translateX(0);
         transition: all 1s;
     }
-    section.skills.offset .progress{
+    
+    section.skills.offset .progress {
         transform: translateX(-100%);
     }
     
@@ -363,60 +369,13 @@
         text-align: center;
     }
     
-    section.portfolio>nav {
-        text-align: center;
+    section.portfolio>h2 {
+        margin-bottom: 40px;
     }
     
-    section.portfolio>nav>ol {
-        margin: 0 auto;
-        display: inline-block;
-        vertical-align: top;
-    }
-    
-    section.portfolio>nav>ol>li {
-        float: left;
-        margin-left: 40px;
-        cursor: pointer;
-    }
-    
-    section.portfolio>nav>ol>li:first-child {
-        margin-left: 0;
-    }
-    
-    section.portfolio>nav {
-        display: inline-block;
-        vertical-align: top;
-        margin-top: 32px;
-        margin-bottom: 20px;
-    }
-    
-    section.portfolio>nav .bar {
-        height: 5px;
-        background-color: #fff;
-        margin-top: 5px;
-        border-radius: 2px;
-    }
-    
-    section.portfolio>nav .bar-inner {
-        height: 100%;
-        background: #e6686a;
-        border-radius: 2px;
-        transition: 0.3s;
-    }
-    
-    section.portfolio>nav .bar.state-1 .bar-inner {
-        margin-left: 0;
-        width: 34px;
-    }
-    
-    section.portfolio>nav .bar.state-2 .bar-inner {
-        margin-left: 65px;
-        width: 50px;
-    }
-    
-    section.portfolio>nav .bar.state-3 .bar-inner {
-        margin-left: 140px;
-        width: 58px;
+    section.portfolio .swiper-container {
+        width: 668px;
+        height: 501px;
     }
     
     section.portfolio .works {
