@@ -322,6 +322,7 @@
     }
     
     section.portfolio>h2,
+    section.message>h2,
     section.skills>h2 {
         text-align: center;
         color: #3D4451;
@@ -394,4 +395,19 @@
     section.portfolio .works .big,
     section.portfolio .works .small {
         position: absolute;
+    }
+    
+    section.message {
+        max-width: 668px;
+        margin: 0 auto;
+        background: #f4f4f4;
+    }
+    
+    section.message>ol {
+        border-top: 1px solid #ddd;
+    }
+    
+    section.message>ol>li {
+        padding: 16px;
+        border-bottom: 1px solid #ddd;
     }
